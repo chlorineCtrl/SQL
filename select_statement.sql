@@ -1,6 +1,19 @@
-USE sql_store;
+select 
+	last_name, 
+	first_name, 
+    points,
+    points - 100 as 'discount factor'
+from customers;
 
-SELECT *
-FROM customers
--- WHERE customer_id = 10
-ORDER BY first_name
+select distinct state
+from customers;
+
+-- task1
+
+select 
+	name,
+    unit_price,
+    unit_price * 20 as 'new price'
+from products
+    
+    
