@@ -43,3 +43,25 @@ CREATE VIEW ProjectView AS
 SELECT PID, DATEDIFF(EndDate, StartDate) AS ProjectLength, Budget
 FROM Project
 ORDER BY Budget DESC;
+
+-- c) Assume that the current datatype of EID is integer. The database administrator intends to change the datatype to varchar2 (12). Present the sequential operations required to execute this modification (You are not required to provide the exact queries).
+
+--     Backup Data: Ensure a backup of the Employee table data.
+
+--     Update Foreign Keys: If EID is referenced in other tables as a foreign key, update those foreign keys to match the new datatype.
+
+--     Update Primary Key: If EID is a primary key, update any foreign keys in other tables that reference it.
+
+--     Update Data Type: Alter the Employee table to change the datatype of EID to varchar2(12).
+
+--     Update Indexes and Constraints: Rebuild any indexes or constraints that involve the EID column.
+
+--     Update Referencing Columns: If there are other columns in the database that reference EID, update their datatype.
+
+--     Test and Validate: Execute test cases to ensure data integrity and correctness after the datatype change.
+
+--     Update Application Code: If any application code relies on the datatype of EID, update it accordingly.
+
+--     Notify Users: Inform users about the upcoming change and any expected downtime.
+
+--     Execute: Execute the planned changes during a maintenance window to minimize impact on users.
