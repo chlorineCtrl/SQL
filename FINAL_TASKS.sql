@@ -24,5 +24,9 @@ WHERE EID IN (
     GROUP BY EID
     HAVING AVG(HoursWorked) > (SELECT AVG(HoursWorked) FROM Assignment)
 );
+-- 2a(iv)
 
-
+select E.EName,E.Department, coalesce(count(A.PID),0) as NumProjectAssigned
+from employee E
+left join assignment A on E.EID = A.EID and year(A.AssignmentDate) = 2023
+group by E.EID, E.EName, E.Department;
