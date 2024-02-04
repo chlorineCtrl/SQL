@@ -36,3 +36,10 @@ group by E.EID, E.EName, E.Department;
 select PName
 from project
 order by datediff(EndDate,StartDate) desc
+limit 1;
+
+-- 2b
+CREATE VIEW ProjectView AS
+SELECT PID, DATEDIFF(EndDate, StartDate) AS ProjectLength, Budget
+FROM Project
+ORDER BY Budget DESC;
