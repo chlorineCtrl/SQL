@@ -30,3 +30,9 @@ select E.EName,E.Department, coalesce(count(A.PID),0) as NumProjectAssigned
 from employee E
 left join assignment A on E.EID = A.EID and year(A.AssignmentDate) = 2023
 group by E.EID, E.EName, E.Department;
+
+-- 2a(v)
+
+select PName
+from project
+order by datediff(EndDate,StartDate) desc
